@@ -1,0 +1,70 @@
+### Health
+GET http://localhost:8080/api/public/health
+
+### Login as doctor
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "doctor@hospital.com",
+  "password": "doctor123"
+}
+
+### Register a patient
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "New Patient",
+  "email": "newpatient@example.com",
+  "password": "pass123",
+  "role": "PATIENT"
+}
+
+### Doctor dashboard
+GET http://localhost:8080/api/doctor/dashboard
+Authorization: Bearer paste-token-here
+
+### Patient profile
+GET http://localhost:8080/api/patient/profile
+Authorization: Bearer paste-token-here
+
+### Admin users
+GET http://localhost:8080/api/admin/users
+Authorization: Bearer paste-token-here
+
+### Create doctor record and login
+POST http://localhost:8080/api/doctors
+Authorization: Bearer paste-token-here
+Content-Type: application/json
+
+{
+  "name": "Dr. Meera Shah",
+  "email": "meera@example.com",
+  "password": "doctorPass123",
+  "specialization": "Cardiology",
+  "phone": "9876543210"
+}
+
+### List doctors
+GET http://localhost:8080/api/doctors
+Authorization: Bearer paste-token-here
+
+### Create patient record and login
+POST http://localhost:8080/api/patients
+Authorization: Bearer paste-token-here
+Content-Type: application/json
+
+{
+  "name": "Anita Rao",
+  "email": "anita@example.com",
+  "password": "patientPass123",
+  "phone": "9123456780",
+  "age": 32,
+  "address": "Pune",
+  "medicalHistory": "No known allergies"
+}
+
+### List patients
+GET http://localhost:8080/api/patients
+Authorization: Bearer paste-token-here
