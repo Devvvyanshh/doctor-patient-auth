@@ -69,11 +69,18 @@ $env:VITE_API_BASE_URL="http://localhost:9090"
 npm run dev
 ```
 
+Required for any environment:
+
+```powershell
+$env:APP_JWT_SECRET="use-a-long-secret-value-at-least-32-characters"
+```
+
+The application will not start without `APP_JWT_SECRET`. Use a securely generated secret of at least 32 characters and keep it in an environment-specific secret manager; do not commit it to the repository.
+
 Optional environment variables:
 
 ```powershell
 $env:SERVER_PORT="9090"
-$env:APP_JWT_SECRET="use-a-long-secret-value-at-least-32-characters"
 $env:DB_USERNAME="root"
 $env:DB_PASSWORD="your_mysql_password"
 ```
